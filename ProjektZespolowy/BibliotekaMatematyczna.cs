@@ -87,24 +87,27 @@ namespace ProjektZespolowy
             }
             return tab;
         }
-        public int[] InsertSort2(int[] tab)
+        bool CzyPierwsza(int liczba)
         {
-            for (int i = 0; i < tab.Length; i++)
+            bool wynik = false;
+            int dzielniki = 0;
+            for (int i = 1; i < liczba; i++)
             {
-                int min = tab[i];
-                int minIndex = i;
-                for (int j = i + 1; j < tab.Length; j++)
+                if (liczba % i == 0)
                 {
-                    if (tab[j] < min)
-                    {
-                        min = tab[j];
-                        minIndex = j;
-                    }
+                    dzielniki++;
                 }
-                tab[minIndex] = tab[i];
-                tab[i] = min;
             }
-            return tab;
+            if (dzielniki == 2)
+            {
+                wynik = true;
+            }
+            else if (dzielniki > 2)
+            {
+                wynik = false;
+            }
+            return wynik;
         }
+        
     }
 }
