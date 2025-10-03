@@ -67,5 +67,25 @@ namespace ProjektZespolowy
             }
             return max;
         }
+
+        public int[] InsertSort(int[] tab)
+        {
+            for (int i = 0; i < tab.Length; i++)
+            {
+                int min = tab[i];
+                int minIndex = i;
+                for (int j = i + 1; j < tab.Length; j++)
+                {
+                    if (tab[j] < min)
+                    {
+                        min = tab[j];
+                        minIndex = j;
+                    }
+                }
+                tab[minIndex] = tab[i];
+                tab[i] = min;
+            }
+            return tab;
+        }
     }
 }
