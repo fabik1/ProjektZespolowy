@@ -87,11 +87,11 @@ namespace ProjektZespolowy
             }
             return tab;
         }
-        bool CzyPierwsza(int liczba)
+      public  bool CzyPierwsza(int liczba)
         {
             bool wynik = false;
             int dzielniki = 0;
-            for (int i = 1; i < liczba; i++)
+            for (int i = 1; i <= liczba; i++)
             {
                 if (liczba % i == 0)
                 {
@@ -108,6 +108,16 @@ namespace ProjektZespolowy
             }
             return wynik;
         }
-        
+       public int potęgowanie(int liczba, int potega)
+        {
+            potega--;
+            int liczbachwilowa = liczba;
+            for (int i = 1; i <= potega; i++)
+            {
+                liczba = liczba * liczbachwilowa;
+            }
+            return liczba;
+        }
     }
+
 }
