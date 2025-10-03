@@ -87,5 +87,26 @@ namespace ProjektZespolowy
             }
             return tab;
         }
+        bool CzyPierwsza(int liczba)
+        {
+            bool wynik = false;
+            int dzielniki = 0;
+            for (int i = 1; i < liczba; i++)
+            {
+                if (liczba % i == 0)
+                {
+                    dzielniki++;
+                }
+            }
+            if (dzielniki == 2)
+            {
+                wynik = true;
+            }
+            else if (dzielniki > 2)
+            {
+                wynik = false;
+            }
+            return wynik;
+        }
     }
 }
